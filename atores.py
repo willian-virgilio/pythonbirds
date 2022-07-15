@@ -123,7 +123,7 @@ class Passaro(Ator):
         :param tempo: tempo de jogo a ser calculada a posição
         :return: posição x, y
         """
-        if self.foi_lancado()
+        if self.foi_lancado():
             delta_t =  tempo - self._tempo_de_lancamento
             self._calcular_posicao_vertical(delta_t)
         return super().calcular_posicao(tempo)
