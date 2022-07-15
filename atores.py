@@ -142,8 +142,11 @@ class Passaro(Ator):
         self._tempo_de_lancamento = tempo_de_lancamento
 
     def _calcular_posicao_vertical(self, delta_t):
-        pass
-
+        y_atual = self._y_inicial
+        angulos_radianos = math.radians(self._angulo_de_lancamento)
+        y_atual += self.velocidade_escalar * delta_t * math.sin(angulos_radianos)
+        y_atual -= (GRAVIDADE * (delta_t ** 2)) / 2
+        self.y = y_atual
 
 class PassaroAmarelo(Passaro):
     _caracter_ativo =  'A'
